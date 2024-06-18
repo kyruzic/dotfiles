@@ -1,0 +1,53 @@
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-id = "typescriptreact"
+language-servers = ["typescript-language-server", "tailwindcss-ls"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-id = "javascriptreact"
+language-servers = ["typescript-language-server", "tailwindcss-ls"]
+grammar = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git"]
+language-servers = ["pyright"]
+formatter = { command = 'blacks', args = ["--quiet", "-"] }
+auto-format = true
+
+[language-server.rust-analyzer]
+config.check.command = "clippy"
+# config.check.extraArgs = ["--target-dir", "/tmp/rust-analyzer-check"]
